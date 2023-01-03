@@ -1446,7 +1446,7 @@ var drawTiles = function(ctx,left,top,size) {
 
 var mapgen = function() {
     genRandom();
-    var map = new Map(23,24,getTiles());
+    var map = new Map(26,27,getTiles());
     map.name = "";
     map.wallFillColor = randomColor();
     map.wallStrokeColor = rgbString(hslToRgb(Math.random(), Math.random(), Math.random() * 0.4 + 0.6));

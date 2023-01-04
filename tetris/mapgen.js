@@ -207,13 +207,6 @@ var genRandom = function() {
             fillCell(cell);
 
             // randomly allow one single-cell piece on the top or bottom of the map.
-            if (cell.x < cols-1 && (cell.y in singleCount) && Math.random() <= probTopAndBotSingleCellJoin) {
-                if (singleCount[cell.y] == 0) {
-                    cell.connect[cell.y == 0 ? UP : DOWN] = true;
-                    singleCount[cell.y]++;
-                    continue;
-                }
-            }
 
             // number of cells in this contiguous group
             size = 1;
@@ -1446,7 +1439,7 @@ var drawTiles = function(ctx,left,top,size) {
 
 var mapgen = function() {
     genRandom();
-    var map = new Map(26,27,getTiles());
+    var map = new Map(28,36,getTiles());
     map.name = "";
     map.wallFillColor = randomColor();
     map.wallStrokeColor = rgbString(hslToRgb(Math.random(), Math.random(), Math.random() * 0.4 + 0.6));
